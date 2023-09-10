@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func createRandomEntry(t *testing.T, account Accounts) Entries {
+func createRandomEntry(t *testing.T, account Account) Entry {
 
 	args := CreateEntryParams{AccountID: account.ID, Amount: util.RandomMoney()}
 
