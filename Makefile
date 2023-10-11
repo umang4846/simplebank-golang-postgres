@@ -32,4 +32,7 @@ server :
 
 mock :
 	mockgen -package mockdb -destination db/mock/store.go github.com/umang4846/simple_bank/db/sqlc Store
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc dockersqlc test server mock
+
+awssecrets :
+	aws --profile simplebank secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc dockersqlc test server mock awssecrets
